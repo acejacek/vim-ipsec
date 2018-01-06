@@ -31,17 +31,14 @@ syn match   ipsecError /./
 
 " section header (e.g. 'conn %default' or 'config setup')
 " (this is the only top-level element except for comments and errors)
-syn match   ipsecSectionHeader /^[[:alpha:]][[:alnum:]._-]\+\>.*$/ contains=ipsecSectionKeyword,ipsecError nextgroup=ipsecSectionLine skipnl
-syn keyword ipsecSectionKeyword contained conn config nextgroup=@ipsecSectionName skipwhite
+syn match   ipsecSectionHeader /^[[:alpha:]][[:alnum:]._-]\+\>.*$/ contains=ipsecSectionKeyword,ipsecError nextgroup=ipsecSectionLine skipnl 
+syn keyword ipsecSectionKeyword contained conn config nextgroup=@ipsecSectionName skipwhite 
 syn cluster ipsecSectionName contains=ipsecSectionNameStr,ipsecMacro
 syn match   ipsecSectionNameStr contained /\<[[:alpha:]][[:alnum:]._-]*\>$/
 
 " Lines that make up sections (assignments)
-syn match   ipsecSectionLine contained /^..*$/ contains=ipsecSectionWS,ipsecError,ipsecComment nextgroup=ipsecSectionLine skipnl
+syn match   ipsecSectionLine contained /^..*$/ contains=ipsecSectionWS,ipsecSectionHeader,ipsecError,ipsecComment nextgroup=ipsecSectionLine skipempty 
 syn match   ipsecSectionWS contained /^\s\+/ nextgroup=ipsecParam
-
-" Params valid in all sections - commented out before deletion
-" syn keyword ipsecParam contained nextgroup=ipsecEq also
 
 " User extension parameters
 syn match   ipsecParam contained nextgroup=ipsecEq /\<[Xx][-_][[:alpha:]][[:alnum:]._-]*\>/
@@ -362,6 +359,3 @@ if version >= 508 || !exists("did_ipsec_conf__syn_inits")
 
   delcommand HiLink
 endif
-
-" Autoconfigure vim indentation settings
-" vim:ts=4:sw=4:sts=4:fdm=marker:iskeyword+=-
