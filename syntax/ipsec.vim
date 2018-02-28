@@ -74,7 +74,7 @@ syn keyword ipsecParam contained nextgroup=ipsecSendCert leftsendcert rightsendc
 
                                                    " automatic keying
 syn keyword ipsecParam contained nextgroup=ipsecKE keyexchange
-syn keyword ipsecParam contained nextgroup=ipsecKR keyingretries
+syn keyword ipsecParam contained nextgroup=ipsecKR keyingtries keyingretries
 syn keyword ipsecParam contained nextgroup=ipsecTime keylife rekeymargin
 syn keyword ipsecParam contained nextgroup=ipsecPercentage rekeyfuzz
 syn keyword ipsecParam contained nextgroup=ipsecTime dpddelay dpdtimeout inactivity
