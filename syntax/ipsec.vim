@@ -79,7 +79,7 @@ syn keyword ipsecParam contained nextgroup=ipsecTime keylife rekeymargin
 syn keyword ipsecParam contained nextgroup=ipsecPercentage rekeyfuzz
 syn keyword ipsecParam contained nextgroup=ipsecTime dpddelay dpdtimeout inactivity
 syn keyword ipsecParam contained nextgroup=ipsecTime keylife lifetime ikelifetime margintime rekeymargin
-syn keyword ipsecParam contained nextgroup=ipsecNumber lifebytes lifepackets marginbytes marginpackets reqid
+syn keyword ipsecParam contained nextgroup=ipsecNumber lifebytes lifepackets marginbytes marginpackets reqid keyingtries
 							" left
 syn keyword ipsecParam contained nextgroup=ipsecEq leftid leftrsasigkey leftdns 
 syn keyword ipsecParam contained nextgroup=ipsecLSrcIp leftsourceip 
@@ -193,6 +193,7 @@ syn match ipsecTunAuth /=eap-md5/
 syn match ipsecTunAuth /=eap-mschapv2/
 syn match ipsecTunAuth /=eap-peap/
 syn match ipsecTunAuth /=eap-sim/
+syn match ipsecTunAuth /=eap-tls/
 syn match ipsecTunAuth /=eap-ttls/
 syn match ipsecTunAuth /=eap-dynamic/
 syn match ipsecTunAuth /=eap-radius/
