@@ -74,7 +74,7 @@ syn keyword ipsecParam contained nextgroup=ipsecSendCert leftsendcert rightsendc
 
                                                    " automatic keying
 syn keyword ipsecParam contained nextgroup=ipsecKE keyexchange
-syn keyword ipsecParam contained nextgroup=ipsecKR keyingretries
+syn keyword ipsecParam contained nextgroup=ipsecKR keyingtries keyingretries
 syn keyword ipsecParam contained nextgroup=ipsecTime keylife rekeymargin
 syn keyword ipsecParam contained nextgroup=ipsecPercentage rekeyfuzz
 syn keyword ipsecParam contained nextgroup=ipsecTime dpddelay dpdtimeout inactivity
@@ -193,6 +193,7 @@ syn match ipsecTunAuth /=eap-md5/
 syn match ipsecTunAuth /=eap-mschapv2/
 syn match ipsecTunAuth /=eap-peap/
 syn match ipsecTunAuth /=eap-sim/
+syn match ipsecTunAuth /=eap-tls/
 syn match ipsecTunAuth /=eap-ttls/
 syn match ipsecTunAuth /=eap-dynamic/
 syn match ipsecTunAuth /=eap-radius/
